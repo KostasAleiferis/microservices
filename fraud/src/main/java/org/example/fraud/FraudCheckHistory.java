@@ -1,7 +1,6 @@
 package org.example.fraud;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +8,6 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -28,4 +26,9 @@ public class FraudCheckHistory {
     private Boolean isFraudster;
     private LocalDateTime createdAt;
 
+    public FraudCheckHistory(Integer customerId, Boolean isFraudster, LocalDateTime createdAt) {
+        this.customerId = customerId;
+        this.isFraudster = isFraudster;
+        this.createdAt = createdAt;
+    }
 }
